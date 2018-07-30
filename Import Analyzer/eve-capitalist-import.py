@@ -60,9 +60,13 @@ marketGroupSearchItems = ['Machariel', 'Marshal', 'Vedmak', 'Hydrogen Isotopes']
 marketGroupIds = []
 #########################################################################################
 # Get region ID
-payload = {'categories': ['region'], 'search': regionName, 'strict': 'true'}
-r = requests.get(SearchUrl, params=payload)
-regionId = r.json()['region'][0]
+
+# why.. . it is always   10000060... you hardcoded "the forge"
+#payload = {'categories': ['region'], 'search': regionName, 'strict': 'true'}
+#r = requests.get(SearchUrl, params=payload)
+#regionId = r.json()['region'][0]
+
+regionId=10000060
 
 # For each relevant type, get their prices at reference location and at queried location
 # Use history API because CCPls don't show prices at structures
